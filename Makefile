@@ -166,6 +166,7 @@ install-minio: install-ingress
 
 .PHONY: install-lagoon-core
 install-lagoon-core: install-minio
+	$(HELM) dependency build ./charts/lagoon-core/
 	$(HELM) upgrade \
 		--install \
 		--create-namespace \

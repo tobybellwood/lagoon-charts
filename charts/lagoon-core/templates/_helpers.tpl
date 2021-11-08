@@ -833,3 +833,12 @@ app.kubernetes.io/name: {{ include "lagoon-core.name" . }}
 app.kubernetes.io/component: {{ include "lagoon-core.workflows.fullname" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+
+
+{{/*
+Create a default fully qualified app name for the nats subchart.
+*/}}
+{{- define "lagoon-core.nats.fullname" -}}
+{{- include "lagoon-core.fullname" . }}-nats
+{{- end }}
